@@ -2,7 +2,7 @@
 title: Dienstleistungen
 layout: services
 description: Unsere Dienstleistungen für Privatpersonen und Unternehmen in der Schweiz.
-intro_image: "images/illustrations/reading.svg"
+intro_image: "images/services.png"
 permalink: /services/
 lang: de
 intro_image_absolute: true

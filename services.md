@@ -2,10 +2,10 @@
 title: Services
 layout: services
 description: Our services for individuals and companies in Switzerland.
-intro_image: "images/illustrations/reading.svg"
+intro_image: "images/services.png"
 permalink: /services/
 lang: en
-intro_image_absolute: true
+intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
