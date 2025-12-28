@@ -1,12 +1,14 @@
 ---
 title: Services
 layout: services
-description: Services
+description: Our services for individuals and companies in Switzerland.
 intro_image: "images/illustrations/reading.svg"
+permalink: /services/
+lang: en
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
 ---
 
 # Services that grow with your business
 
-Aliquam erat volutpat. Morbi nisl tortor, dignissim eget efficitur vel, auctor non felis. Fusce quis viverra mi. Aenean quis massa pretium, ullamcorper nisi eget, hendrerit odio.
+We provide tailored solutions for complex administrative challenges. Our goal is to smooth your path through the Swiss bureaucratic landscape, allowing you to focus on your core business or your new life chapter.

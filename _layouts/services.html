@@ -20,12 +20,18 @@ bodyClass: "page-services"
 
 <div class="container pt-6 pb-6">
   <div class="row">
-    {% for service in site.services %}
+    {% assign services = site.services | where: "lang", site.active_lang %}
+    {% for service in services %}
+      {% assign service_url = service.url | relative_url %}
+      {% if site.active_lang != site.default_lang %}
+        {% assign service_url = service.url | prepend: '/' | prepend: site.active_lang | replace: '//', '/' | relative_url %}
+      {% endif %}
     <div class="col-12 col-md-6 mb-3">
       <div class="service service-summary">
         <div class="service-content">
           <h2 class="service-title">
-            <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
+            <a href="{{ service_url }}">{{ service.title }}</a>
+
           </h2>
           <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
         </div>

@@ -8,8 +8,10 @@
       {% endif %}
 
       {% assign href = item.url | relative_url %}
-      {% if site.active_lang %}
-        {% assign href = item.url | localized_url %}
+      
+      {% comment %} If we are in German (or any non-default lang), force the prefix {% endcomment %}
+      {% if site.active_lang != site.default_lang %}
+        {% assign href = item.url | prepend: '/' | prepend: site.active_lang | replace: '//', '/' | relative_url %}
       {% endif %}
 
       <li class="{% if item.url == page.url %}active{% endif %}">
