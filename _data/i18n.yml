@@ -1,0 +1,15 @@
+en:
+  menu:
+    services: "Services"
+    team: "Team"
+    about: "About"
+    contact: "Contact"
+    home: "Home"
+
+de:
+  menu:
+    services: "Leistungen"
+    team: "Team"
+    about: "Über mich"
+    contact: "Kontakt"
+    home: "Startseite"

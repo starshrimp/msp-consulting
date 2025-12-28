@@ -37,6 +37,7 @@ sass:
 
 plugins:
   - jekyll-environment-variables
+  - jekyll-polyglot
 
 exclude:
   - Gemfile
@@ -49,7 +50,7 @@ exclude:
   - LICENSE.md
   - LICENSE
   - README.md
-  - jekyll-polyglot
+
 
 # Multilingual Settings
 languages: ["en", "de"]

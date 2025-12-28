@@ -1,10 +1,29 @@
 <div id="main-menu" class="main-menu">
-  {% assign mainmenu = site.data.menus.main | sort: 'weight'  %}
+  {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
   <ul>
     {% for item in mainmenu %}
-    <li class="{% if item.url == page.url %}active{% endif %}">
-      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
-    </li>
+      {% assign label = item.name | default: item.key %}
+      {% if site.data.i18n and site.active_lang and item.key and site.data.i18n[site.active_lang] and site.data.i18n[site.active_lang].menu and site.data.i18n[site.active_lang].menu[item.key] %}
+        {% assign label = site.data.i18n[site.active_lang].menu[item.key] %}
+      {% endif %}
+
+      {% assign href = item.url | relative_url %}
+      {% if site.active_lang %}
+        {% assign href = item.url | localized_url %}
+      {% endif %}
+
+      <li class="{% if item.url == page.url %}active{% endif %}">
+        <a href="{{ href }}">{{ label }}</a>
+      </li>
     {% endfor %}
+    <div class="lang-switch">
+      {% for lang in site.languages %}
+        {% if lang == site.active_lang %}
+          <span class="active-lang">{{ lang | upcase }}</span>
+        {% else %}
+          <a class="lang-link" href="{{ page.url | localized_url: lang }}">{{ lang | upcase }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
   </ul>
 </div>
