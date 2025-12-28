@@ -16,14 +16,24 @@
         <a href="{{ href }}">{{ label }}</a>
       </li>
     {% endfor %}
+    {% assign canonical = page.permalink | default: page.url %}
+
+    {% if canonical == "/" %}
+      {% assign canonical_no_slash = "" %}
+    {% else %}
+      {% assign canonical_no_slash = canonical %}
+    {% endif %}
+
     <div class="lang-switch">
-      {% for lang in site.languages %}
-        {% if lang == site.active_lang %}
-          <span class="active-lang">{{ lang | upcase }}</span>
-        {% else %}
-          <a class="lang-link" href="{{ page.url | localized_url: lang }}">{{ lang | upcase }}</a>
-        {% endif %}
-      {% endfor %}
+      {% if site.active_lang == "en" %}
+        <span class="active-lang">EN</span>
+        <a class="lang-link" href="/de{{ canonical_no_slash }}">DE</a>
+      {% else %}
+        <a class="lang-link" href="{{ canonical_no_slash }}">EN</a>
+        <span class="active-lang">DE</span>
+      {% endif %}
     </div>
+
+
   </ul>
 </div>

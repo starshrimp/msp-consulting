@@ -1,15 +1,14 @@
 ---
-title: About
+title: Über Uns
 layout: page
-description: About
+description: Über Uns
 bodyClass: page-about
 permalink: /about/
-lang: en
+lang: de
+
 ---
 
-Lorem markdownum aequalis strigis. _Saetigeri iubeas_, vultu huic alvum nondum
-de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae
-crimen habet Priamum nec.
+Deutscher text
 
 ![Accounting Services](/images/thom-holmes-Lrfw0U_o9I0-unsplash.jpg)
 

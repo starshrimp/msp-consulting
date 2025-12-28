@@ -56,4 +56,4 @@ exclude:
 languages: ["en", "de"]
 default_lang: "en" # or "en", depending on your preference
 exclude_from_localization: ["assets", "css", "images", "js","admin", "favicon.ico"]
-parallel_localization: true
+parallel_localization: false
