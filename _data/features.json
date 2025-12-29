@@ -1,27 +1,27 @@
 [
   {
-    "title": "Free Consultation",
-    "description": "New clients receive an obligation free consultation.",
+    "title": "Swiss Expertise",
+    "description": "Deep knowledge of Swiss administrative and labor laws to navigate bureaucracy efficiently.",
     "image": {
-      "url": "images/features/noun_branding_1885335.svg",
+      "url": "images/illustrations/quality.png",
       "width": 80,
       "height": 80
     }
   },
   {
-    "title": "Certified Accountants",
-    "description": "All members of our team are certified accountants.",
+    "title": "Strong Network",
+    "description": "Direct access to a verified network of specialized lawyers, notaries, and tax experts.",
     "image": {
-      "url": "images/features/noun_The Process_1885341.svg",
+      "url": "images/illustrations/networking.png",
       "width": 80,
       "height": 80
     }
   },
   {
-    "title": "Tax Compliance",
-    "description": "We stay up to date on the latest changes to the tax code.",
+    "title": "Tailored Solutions",
+    "description": "We don't do 'one size fits all'. We develop individual strategies for your specific case.",
     "image": {
-      "url": "images/features/noun_3d modeling_1885342.svg",
+      "url": "images/illustrations/measuring-tape.png",
       "width": 80,
       "height": 80
     }
