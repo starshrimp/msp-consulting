@@ -37,4 +37,3 @@ Thanks to my many years of experience in the administrative and immigration law 
 
 ### Our Network
 No one can do it all alone. For specific legal questions (e.g., in complex tax law or legal disputes), we rely on a proven network of **lawyers, notaries, and tax experts**. We coordinate these specialists for you, ensuring that you continue to have a single point of contact.
-📸
