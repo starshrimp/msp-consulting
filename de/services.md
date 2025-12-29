@@ -5,7 +5,7 @@ description: Unsere Dienstleistungen für Privatpersonen und Unternehmen in der 
 intro_image: "images/services.png"
 permalink: /services/
 lang: de
-intro_image_absolute: true
+intro_image_absolute: false
 intro_image_hide_on_mobile: true
 ---
 
