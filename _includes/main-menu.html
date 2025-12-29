@@ -1,58 +1,81 @@
+{%- comment -%}
+  _includes/main-menu.html
+
+  Assumptions:
+  - site.languages = ["en","de"]
+  - site.default_lang = "en"
+  - menu items in _data/menus/main.yml use language-neutral urls like:
+      - url: /
+      - url: /about/
+      - url: /services/
+  - Uses relative_url so baseurl is applied automatically (don’t prepend site.baseurl manually).
+{%- endcomment -%}
+
 <div id="main-menu" class="main-menu">
-  {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
+  {%- assign mainmenu = site.data.menus.main | sort: 'weight' -%}
+
+  {%- comment -%} Canonicalize current page URL by stripping any leading language segment {%- endcomment -%}
+  {%- assign current_path = page.url -%}
+  {%- assign current_path = current_path | replace_first: '/de/', '/' -%}
+  {%- assign current_path = current_path | replace_first: '/de', '' -%}
+  {%- assign current_path = current_path | replace_first: '/en/', '/' -%}
+  {%- assign current_path = current_path | replace_first: '/en', '' -%}
+  {%- assign current_path = current_path | replace: '//', '/' -%}
+
   <ul>
-    {% for item in mainmenu %}
-      {% assign label = item.name | default: item.key %}
-      {% if site.data.i18n and site.active_lang and item.key and site.data.i18n[site.active_lang] and site.data.i18n[site.active_lang].menu and site.data.i18n[site.active_lang].menu[item.key] %}
-        {% assign label = site.data.i18n[site.active_lang].menu[item.key] %}
-      {% endif %}
+    {%- comment -%} Main navigation {%- endcomment -%}
+    {%- for item in mainmenu -%}
+      {%- assign label = item.name | default: item.key -%}
 
-      {% assign href = item.url | relative_url %}
-      
-      {% comment %} If we are in German (or any non-default lang), force the prefix {% endcomment %}
-      {% if site.active_lang != site.default_lang %}
-        {% assign href = item.url | prepend: '/' | prepend: site.active_lang | replace: '//', '/' | relative_url %}
-      {% endif %}
+      {%- if site.data.i18n
+          and site.active_lang
+          and item.key
+          and site.data.i18n[site.active_lang]
+          and site.data.i18n[site.active_lang].menu
+          and site.data.i18n[site.active_lang].menu[item.key] -%}
+        {%- assign label = site.data.i18n[site.active_lang].menu[item.key] -%}
+      {%- endif -%}
 
-      <li class="{% if item.url == page.url %}active{% endif %}">
+      {%- comment -%}
+        Build href:
+        - default language: item.url
+        - non-default: /<lang><item.url>
+      {%- endcomment -%}
+      {%- if site.active_lang == site.default_lang -%}
+        {%- assign href = item.url | relative_url -%}
+      {%- else -%}
+        {%- assign href = '/' | append: site.active_lang | append: item.url | replace: '//', '/' | relative_url -%}
+      {%- endif -%}
+
+      {%- assign item_path = item.url | replace: '//', '/' -%}
+
+      <li class="{% if item_path == current_path %}active{% endif %}">
         <a href="{{ href }}">{{ label }}</a>
       </li>
-    {% endfor %}
-    
-    {%- comment -%}
-    Build a language-agnostic path (remove any leading /de or /en),
-    then construct the target URL for each language from that.
-    {%- endcomment -%}
+    {%- endfor -%}
 
+    {%- comment -%} Language switcher {%- endcomment -%}
     {%- assign canonical_path = page.url -%}
-
-    {%- comment -%} strip language prefix variants {%- endcomment -%}
     {%- assign canonical_path = canonical_path | replace_first: '/de/', '/' -%}
     {%- assign canonical_path = canonical_path | replace_first: '/de', '' -%}
     {%- assign canonical_path = canonical_path | replace_first: '/en/', '/' -%}
     {%- assign canonical_path = canonical_path | replace_first: '/en', '' -%}
-
-    {%- comment -%} normalize double slashes {%- endcomment -%}
     {%- assign canonical_path = canonical_path | replace: '//', '/' -%}
 
-    <div class="lang-switch">
-      {% for language in site.languages %}
-        {% if language == site.active_lang %}
+    <li class="lang-switch">
+      {%- for language in site.languages -%}
+        {%- if language == site.active_lang -%}
           <span class="active-lang">{{ language | upcase }}</span>
-        {% else %}
-          {% if language == site.default_lang %}
-            <a class="lang-link" href="{{ canonical_path | relative_url }}">
-              {{ language | upcase }}
-            </a>
-          {% else %}
+        {%- else -%}
+          {%- if language == site.default_lang -%}
+            <a class="lang-link" href="{{ canonical_path | relative_url }}">{{ language | upcase }}</a>
+          {%- else -%}
             <a class="lang-link" href="{{ '/' | append: language | append: canonical_path | replace: '//', '/' | relative_url }}">
               {{ language | upcase }}
             </a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </div>
-
-
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </li>
   </ul>
 </div>
