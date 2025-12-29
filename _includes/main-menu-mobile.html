@@ -1,80 +1,95 @@
 <div id="main-menu-mobile" class="main-menu-mobile">
-  {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
-  <ul>
-    {% for item in mainmenu %}
-      {% comment %} --- 1. Label Translation & URL Prefix Logic --- {% endcomment %}
-      {% assign label = item.name | default: item.key %}
-      {% if site.data.i18n and site.active_lang and item.key and site.data.i18n[site.active_lang] and site.data.i18n[site.active_lang].menu and site.data.i18n[site.active_lang].menu[item.key] %}
-        {% assign label = site.data.i18n[site.active_lang].menu[item.key] %}
-      {% endif %}
+  {%- assign mainmenu = site.data.menus.main | sort: 'weight' -%}
 
-      {% assign href = item.url | relative_url %}
-      {% if site.active_lang != site.default_lang %}
-        {% assign href = item.url | prepend: '/' | prepend: site.active_lang | replace: '//', '/' | relative_url %}
-      {% endif %}
+  <ul>
+    {%- for item in mainmenu -%}
+
+      {%- assign label = item.name | default: item.key -%}
+      {%- if site.data.i18n and site.active_lang and item.key and site.data.i18n[site.active_lang] and site.data.i18n[site.active_lang].menu and site.data.i18n[site.active_lang].menu[item.key] -%}
+        {%- assign label = site.data.i18n[site.active_lang].menu[item.key] -%}
+      {%- endif -%}
+
+      {%- assign href = item.url | relative_url -%}
+
+      {%- comment -%} If we are in non-default lang, force the prefix {%- endcomment -%}
+      {%- if site.active_lang != site.default_lang -%}
+        {%- assign href = item.url | prepend: '/' | prepend: site.active_lang | replace: '//', '/' | relative_url -%}
+      {%- endif -%}
 
       <li class="{% if item.url == page.url %}active{% endif %}">
         <a href="{{ href }}">{{ label }}</a>
       </li>
-    {% endfor %}
+    {%- endfor -%}
 
-    {% comment %} --- 2. Language Switcher (Inside the UL) --- {% endcomment %}
-    <div class="lang-switch mobile-lang-switch">
-      {% if site.languages.size >= 2 %}
-        
-        {% comment %} Calculate URL without current language prefix {% endcomment %}
-        {% assign page_url_no_lang = page.url %}
-        {% if site.active_lang != site.default_lang %}
-          {% assign lang_prefix = site.active_lang | prepend: '/' | append: '/' %}
-          {% assign page_url_no_lang = page.url | replace_first: lang_prefix, '/' %}
-          {% if page.url == lang_prefix or page.url == site.active_lang %}
-             {% assign page_url_no_lang = "/" %}
-          {% endif %}
-        {% endif %}
+    {%- comment -%}
+      Language switcher (same logic as desktop)
+    {%- endcomment -%}
+    <li class="lang-switch">
+      {%- if site.languages.size >= 2 -%}
 
-        {% comment %} Toggle (2 langs) vs List (>2 langs) {% endcomment %}
-        {% if site.languages.size == 2 %}
-          
-          {% if site.active_lang == site.languages.first %}
-            {% assign other_language = site.languages.last %}
-          {% else %}
-            {% assign other_language = site.languages.first %}
-          {% endif %}
+        {%- comment -%}
+          1. Clean the current page URL to remove the current language prefix
+             so we can append the new language cleanly.
+        {%- endcomment -%}
+        {%- assign page_url_no_lang = page.url -%}
+        {%- if site.active_lang != site.default_lang -%}
+          {%- assign lang_prefix = site.active_lang | prepend: '/' | append: '/' -%}
+          {%- assign page_url_no_lang = page.url | replace_first: lang_prefix, '/' -%}
+          {%- comment -%} Handle homepage edge cases where url might be just /de or /de/ {%- endcomment -%}
+          {%- if page.url == lang_prefix or page.url == site.active_lang -%}
+            {%- assign page_url_no_lang = "/" -%}
+          {%- endif -%}
+        {%- endif -%}
 
-          {% if other_language == site.default_lang %}
-            {% assign target_url = site.baseurl | append: page_url_no_lang %}
-          {% else %}
-            {% assign target_url = site.baseurl | append: '/' | append: other_language | append: page_url_no_lang %}
-          {% endif %}
+        {%- comment -%}
+          2. Logic for 2 Languages (Toggle) vs Many (Dropdown)
+        {%- endcomment -%}
+        {%- if site.languages.size == 2 -%}
+
+          {%- comment -%} Find the "other" language {%- endcomment -%}
+          {%- if site.active_lang == site.languages.first -%}
+            {%- assign other_language = site.languages.last -%}
+          {%- else -%}
+            {%- assign other_language = site.languages.first -%}
+          {%- endif -%}
+
+          {%- comment -%} Determine Target URL {%- endcomment -%}
+          {%- if other_language == site.default_lang -%}
+            {%- assign target_url = site.baseurl | append: page_url_no_lang -%}
+          {%- else -%}
+            {%- assign target_url = site.baseurl | append: '/' | append: other_language | append: page_url_no_lang -%}
+          {%- endif -%}
 
           <a class="button-change-language" {% static_href -%} href="{{ target_url }}" {%- endstatic_href %}>
             {{ other_language | upcase }}
           </a>
 
-        {% else %}
-          
+        {%- else -%}
+
+          {%- comment -%} Logic for 3+ Languages (Dropdown) {%- endcomment -%}
           <div class="button-change-language">
-            <span>{{ site.active_lang | upcase }}</span>
+            {{ site.active_lang | upcase }}
             <ul class="language-dropdown">
-              {% for l in site.languages %}
-                {% if l != site.active_lang %}
+              {%- for l in site.languages -%}
+                {%- if l != site.active_lang -%}
                   <li>
-                    {% if l == site.default_lang %}
-                      {% assign target_url = site.baseurl | append: page_url_no_lang %}
+                    {%- if l == site.default_lang -%}
+                      {%- assign target_url = site.baseurl | append: page_url_no_lang -%}
                       <a {% static_href -%} href="{{ target_url }}" {%- endstatic_href %}>{{ l | upcase }}</a>
-                    {% else %}
-                      {% assign target_url = site.baseurl | append: '/' | append: l | append: page_url_no_lang %}
+                    {%- else -%}
+                      {%- assign target_url = site.baseurl | append: '/' | append: l | append: page_url_no_lang -%}
                       <a {% static_href -%} href="{{ target_url }}" {%- endstatic_href %}>{{ l | upcase }}</a>
-                    {% endif %}
+                    {%- endif -%}
                   </li>
-                {% endif %}
-              {% endfor %}
+                {%- endif -%}
+              {%- endfor -%}
             </ul>
           </div>
 
-        {% endif %}
-      {% endif %}
-    </div>
+        {%- endif -%}
+
+      {%- endif -%}
+    </li>
 
   </ul>
 </div>
