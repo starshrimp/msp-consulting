@@ -20,7 +20,7 @@ Unsere Philosophie ist simpel: Wir nehmen Ihnen die Bürokratie ab, damit Sie si
 ### Esther Meyer-Steigmeier
 **Inhaberin & Senior Consultant**
 
-![Esther Meyer-Steigmeier](/images/esther-meyer.jpeg){: .image-left width="250"}
+![Esther Meyer-Steigmeier](images/esther-meyer.jpeg){: .image-left width="250"}
 
 Mit der Gründung von MSP Consulting habe ich es mir zur Aufgabe gemacht, eine Brücke zwischen meinen Klienten und den Schweizer Behörden zu schlagen.
 
