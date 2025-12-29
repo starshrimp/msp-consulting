@@ -26,19 +26,27 @@
       {% assign canonical_no_slash = canonical %}
     {% endif %} -->
 
-    {% assign canonical = page.url %}
+    {% assign path = page.url %}
+
+    {% assign prefix = '/' | append: site.active_lang | append: '/' %}
+    {% if path contains prefix %}
+      {% assign path = path | remove_first: prefix %}
+      {% assign path = '/' | append: path %}
+    {% endif %}
 
     <div class="lang-switch">
       {% for lang in site.languages %}
         {% if lang == site.active_lang %}
           <span class="active-lang">{{ lang | upcase }}</span>
         {% else %}
-          <a class="lang-link" href="{{ site.baseurl_root }}{{ canonical | localized_url: lang }}">
+          <a class="lang-link" href="{{ path | localized_url: lang | relative_url }}">
             {{ lang | upcase }}
           </a>
         {% endif %}
       {% endfor %}
     </div>
+
+
 
 
   </ul>
