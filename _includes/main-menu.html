@@ -26,14 +26,14 @@
       {% assign canonical_no_slash = canonical %}
     {% endif %} -->
 
-    {% assign canonical = page.permalink | default: page.url %}
+    {% assign canonical = page.url %}
 
     <div class="lang-switch">
       {% for lang in site.languages %}
         {% if lang == site.active_lang %}
           <span class="active-lang">{{ lang | upcase }}</span>
         {% else %}
-          <a class="lang-link" href="{{ canonical | localized_url: lang | relative_url }}">
+          <a class="lang-link" href="{{ site.baseurl_root }}{{ canonical | localized_url: lang }}">
             {{ lang | upcase }}
           </a>
         {% endif %}

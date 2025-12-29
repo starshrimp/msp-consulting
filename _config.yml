@@ -1,5 +1,6 @@
 url: "https://starshrimp.github.io"
 baseurl: '/msp-consulting'
+baseurl_root: '/msp-consulting'
 permalink: pretty
 title: 'Jekyll Serif'
 
@@ -56,5 +57,5 @@ exclude:
 # Multilingual Settings
 languages: ["en", "de"]
 default_lang: "en" # or "en", depending on your preference
-exclude_from_localization: ["assets", "css", "images", "js","admin", "favicon.ico"]
+exclude_from_localization: ["admin"]
 parallel_localization: false
