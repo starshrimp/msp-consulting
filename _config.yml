@@ -1,4 +1,5 @@
-baseurl: '/'
+url: "https://starshrimp.github.io"
+baseurl: '/mspconsulting'
 permalink: pretty
 title: 'Jekyll Serif'
 
