@@ -18,44 +18,28 @@
         <a href="{{ href }}">{{ label }}</a>
       </li>
     {% endfor %}
-    {% assign canonical = page.permalink | default: page.url %}
+    <!-- {% assign canonical = page.permalink | default: page.url %}
 
     {% if canonical == "/" %}
       {% assign canonical_no_slash = "" %}
     {% else %}
       {% assign canonical_no_slash = canonical %}
-    {% endif %}
+    {% endif %} -->
+
+    {% assign canonical = page.permalink | default: page.url %}
 
     <div class="lang-switch">
-      {% for language in site.languages %}
-        
-        {% if language == site.active_lang %}
-          <span class="active-lang">{{ language | upcase }}</span>
+      {% for lang in site.languages %}
+        {% if lang == site.active_lang %}
+          <span class="active-lang">{{ lang | upcase }}</span>
         {% else %}
-          
-          {% assign other_lang_url = page.url %}
-
-          {% if language == site.default_lang %}
-            {% if page.url == "/de/" or page.url == "/de" %}
-              {% assign other_lang_url = "/" %}
-            
-            {% else %}
-              {% assign other_lang_url = page.url | replace_first: "/de/", "/" %}
-            {% endif %}
-
-            <a class="lang-link" href="{{ site.baseurl }}{{ other_lang_url }}">
-              {{ language | upcase }}
-            </a>
-
-          {% else %}
-            <a class="lang-link" href="{{ site.baseurl }}/{{ language }}{{ page.url }}">
-              {{ language | upcase }}
-            </a>
-          {% endif %}
-
+          <a class="lang-link" href="{{ canonical | localized_url: lang | relative_url }}">
+            {{ lang | upcase }}
+          </a>
         {% endif %}
       {% endfor %}
     </div>
+
 
   </ul>
 </div>
