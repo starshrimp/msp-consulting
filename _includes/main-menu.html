@@ -29,9 +29,9 @@
     <div class="lang-switch">
       {% if site.active_lang == "en" %}
         <span class="active-lang">EN</span>
-        <a class="lang-link" href="/de{{ canonical_no_slash }}">DE</a>
+        <a class="lang-link" href="{{ site.baseurl }}/de{{ canonical_no_slash }}">DE</a>
       {% else %}
-        <a class="lang-link" href="{{ canonical_no_slash }}">EN</a>
+        <a class="lang-link" href="{{ site.baseurl }}{{ canonical_no_slash }}">EN</a>
         <span class="active-lang">DE</span>
       {% endif %}
     </div>
