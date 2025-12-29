@@ -18,40 +18,41 @@
         <a href="{{ href }}">{{ label }}</a>
       </li>
     {% endfor %}
-    {% assign canonical = page.permalink | default: page.url %}
+    
+    {%- comment -%}
+    Build a language-agnostic path (remove any leading /de or /en),
+    then construct the target URL for each language from that.
+    {%- endcomment -%}
 
-    {% if canonical == "/" %}
-      {% assign canonical_no_slash = "" %}
-    {% else %}
-      {% assign canonical_no_slash = canonical %}
-    {% endif %}
+    {%- assign canonical_path = page.url -%}
+
+    {%- comment -%} strip language prefix variants {%- endcomment -%}
+    {%- assign canonical_path = canonical_path | replace_first: '/de/', '/' -%}
+    {%- assign canonical_path = canonical_path | replace_first: '/de', '' -%}
+    {%- assign canonical_path = canonical_path | replace_first: '/en/', '/' -%}
+    {%- assign canonical_path = canonical_path | replace_first: '/en', '' -%}
+
+    {%- comment -%} normalize double slashes {%- endcomment -%}
+    {%- assign canonical_path = canonical_path | replace: '//', '/' -%}
 
     <div class="lang-switch">
       {% for language in site.languages %}
-        
         {% if language == site.active_lang %}
           <span class="active-lang">{{ language | upcase }}</span>
         {% else %}
-          
-          {% comment %}
-            In Polyglot, page.url is usually 'clean' (no lang prefix), 
-            but we use site.url to force an absolute path to bypass 
-            Polyglot's auto-relative-link rewriting.
-          {% endcomment %}
-
           {% if language == site.default_lang %}
-            <a class="lang-link" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+            <a class="lang-link" href="{{ canonical_path | relative_url }}">
               {{ language | upcase }}
             </a>
           {% else %}
-            <a class="lang-link" href="{{ site.url }}{{ site.baseurl }}/{{ language }}{{ page.url }}">
+            <a class="lang-link" href="{{ '/' | append: language | append: canonical_path | replace: '//', '/' | relative_url }}">
               {{ language | upcase }}
             </a>
           {% endif %}
-
         {% endif %}
       {% endfor %}
     </div>
+
 
   </ul>
 </div>
