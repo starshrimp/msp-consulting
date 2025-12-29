@@ -7,51 +7,51 @@
         {% assign label = site.data.i18n[site.active_lang].menu[item.key] %}
       {% endif %}
 
-      {%- comment -%}
-      Let Polyglot generate the correct language-aware URL for the menu item.
-      Avoid manual "/de/" prefixing, because it can break pairing and URL normalization.
-      {%- endcomment -%}
-      {% assign href = item.url | localized_url | relative_url %}
+      {% assign href = item.url | relative_url %}
+      
+      {% comment %} If we are in German (or any non-default lang), force the prefix {% endcomment %}
+      {% if site.active_lang != site.default_lang %}
+        {% assign href = item.url | prepend: '/' | prepend: site.active_lang | replace: '//', '/' | relative_url %}
+      {% endif %}
 
-      {%- comment -%}
-      Active state: depending on your setup, `page.url` may be language-prefixed
-      while `item.url` is not. Comparing against the localized item URL is safer.
-      {%- endcomment -%}
-      {% assign item_local = item.url | localized_url %}
-      <li class="{% if page.url == item.url or page.url == item_local %}active{% endif %}">
+      <li class="{% if item.url == page.url %}active{% endif %}">
         <a href="{{ href }}">{{ label }}</a>
       </li>
     {% endfor %}
+    {% assign canonical = page.permalink | default: page.url %}
 
-    {%- comment -%}
-    Language switch:
-    Normalize `page.url` into a language-neutral path BEFORE passing to `localized_url`.
-    This handles "/de", "/de/", and deeper paths like "/de/services/".
-    Also keep valid HTML: <ul> should contain <li>, not a raw <div>.
-    {%- endcomment -%}
-
-    {% assign path = page.url %}
-
-    {% assign lang_prefix1 = '/' | append: site.active_lang %}
-    {% assign lang_prefix2 = lang_prefix1 | append: '/' %}
-
-    {% if path == lang_prefix1 %}
-      {% assign path = '/' %}
-    {% elsif path contains lang_prefix2 %}
-      {% assign path = path | remove_first: lang_prefix2 %}
-      {% assign path = '/' | append: path %}
+    {% if canonical == "/" %}
+      {% assign canonical_no_slash = "" %}
+    {% else %}
+      {% assign canonical_no_slash = canonical %}
     {% endif %}
 
-    <li class="lang-switch">
-      {% for lang in site.languages %}
-        {% if lang == site.active_lang %}
-          <span class="active-lang">{{ lang | upcase }}</span>
+    <div class="lang-switch">
+      {% for language in site.languages %}
+        
+        {% if language == site.active_lang %}
+          <span class="active-lang">{{ language | upcase }}</span>
         {% else %}
-          <a class="lang-link" href="{{ path | localized_url: lang | relative_url }}">
-            {{ lang | upcase }}
-          </a>
+          
+          {% comment %}
+            In Polyglot, page.url is usually 'clean' (no lang prefix), 
+            but we use site.url to force an absolute path to bypass 
+            Polyglot's auto-relative-link rewriting.
+          {% endcomment %}
+
+          {% if language == site.default_lang %}
+            <a class="lang-link" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+              {{ language | upcase }}
+            </a>
+          {% else %}
+            <a class="lang-link" href="{{ site.url }}{{ site.baseurl }}/{{ language }}{{ page.url }}">
+              {{ language | upcase }}
+            </a>
+          {% endif %}
+
         {% endif %}
       {% endfor %}
-    </li>
+    </div>
+
   </ul>
 </div>
