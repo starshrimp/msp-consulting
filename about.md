@@ -19,7 +19,7 @@ Our philosophy is simple: We handle the bureaucracy so that you can focus on wha
 ### Esther Meyer-Steigmeier
 **Owner & Senior Consultant**
 
-![Esther Meyer-Steigmeier](images/esther-meyer.jpeg){: .image-left width="250"}
+![Esther Meyer-Steigmeier]({{ site.baseurl }}/images/esther-meyer.jpeg){: .image-left width="250"}
 
 With the founding of MSP Consulting, I made it my mission to build a bridge between my clients and the Swiss authorities.
 

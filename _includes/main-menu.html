@@ -25,20 +25,15 @@
     {% else %}
       {% assign canonical_no_slash = canonical %}
     {% endif %}
-
+    
     <div class="lang-switch">
-      {% for language in site.languages %}
-        
-        {% if language == site.active_lang %}
-          <span class="active-lang">{{ language | upcase }}</span>
-        
-        {% else %}
-          <a class="lang-link" href="{% if language == site.default_lang %}{{ site.baseurl }}{{ page.url }}{% else %}{{ site.baseurl }}/{{ language }}{{ page.url }}{% endif %}">
-            {{ language | upcase }}
-          </a>
-        {% endif %}
-
-      {% endfor %}
+      {% if site.active_lang == "en" %}
+        <span class="active-lang">EN</span>
+        <a class="lang-link" href="{{ site.baseurl }}/de{{ canonical_no_slash }}">DE</a>
+      {% else %}
+        <a class="lang-link" href="{{ site.baseurl }}{{ canonical_no_slash | replace_first: '/de', '' }}">EN</a>
+        <span class="active-lang">DE</span>
+      {% endif %}
     </div>
 
 
