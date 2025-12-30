@@ -13,8 +13,8 @@ Do you have questions about our services or would you like to schedule a consult
     <h3>Address</h3>
     <p>
       <strong>MSP CONSULTING MEYER-STEIGMEIER</strong><br>
-      Strasse<br>
-      Ort<br>
+      Chamerstrasse 12c<br>
+      6304 Zug<br>
       CH-Switzerland
     </p>
     <p>
