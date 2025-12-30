@@ -8,22 +8,13 @@ weight: 2
 
 Die Schweiz bietet politische Stabilität, eine starke Währung und ein unternehmerfreundliches Umfeld. Wir unterstützen Sie dabei, Ihr Unternehmen hier rechtssicher zu gründen.
 
-# Rechtsformen
 
-Die Wahl zwischen AG und GmbH ist die erste wichtige Entscheidung.
 
-| Merkmal | GmbH (Gesellschaft mit beschränkter Haftung) | AG (Aktiengesellschaft) |
-| ------- | -------------------------------------------- | ----------------------- |
-| **Mindestkapital** | CHF 20'000 | CHF 100'000 (mind. 50% liberiert) |
-| **Anonymität** | Gesellschafter sind öffentlich im Handelsregister | Aktionäre sind i.d.R. nicht öffentlich |
-| **Haftung** | Nur Gesellschaftsvermögen | Nur Gesellschaftsvermögen |
+# Unser Vorgehen
 
-## Unser Vorgehen
+Wir übernehmen das gesamte Projektmanagement für Ihre Ansiedlung und begleiten Sie kompetent von der ersten Idee bis zur operativen Umsetzung:
 
-Wir übernehmen das Projektmanagement für Ihre Ansiedlung:
-
-1.  **Domizilierung:** Wir finden geeignete Büroräumlichkeiten oder bieten Domiziladressen an.
-2.  **Notarielle Begleitung:** Organisation der Gründungsversammlung und notariellen Beglaubigung.
-3.  **Behörden:** Anmeldung bei der Mehrwertsteuer (MWST) und den Sozialversicherungen (AHV/IV).
-
-> **Hinweis:** Ausländische Unternehmen benötigen oft einen in der Schweiz wohnhaften Verwaltungsrat oder Geschäftsführer. Wir beraten Sie zu diesen Anforderungen.
+1.  **Standort & Strategie:** Wir führen detaillierte Standortabklärungen durch und beraten Sie bei der Wahl des optimalen Kantons für Ihr Vorhaben.
+2.  **Firmengründung:** Wir koordinieren den gesamten Gründungsprozess, inklusive Domizilierung (Suche nach Büroräumen oder Bereitstellung einer Domiziladresse) sowie der Organisation der notariellen Beglaubigungen.
+3.  **Behördenmanagement:** Wir übernehmen die Anmeldung bei der Mehrwertsteuer (MWST) und den Sozialversicherungen (AHV/IV) und stellen sicher, dass alle regulatorischen Auflagen erfüllt sind.
+4.  **Bewilligungen & Personal:** Wir erwirken die notwendigen Aufenthalts- und Arbeitsbewilligungen für Sie, Ihre Familienmitglieder und Ihre Mitarbeitenden.

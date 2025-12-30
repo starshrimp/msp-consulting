@@ -10,7 +10,7 @@ Für HR-Abteilungen ist das Management von Arbeitsbewilligungen oft ein Zeitfres
 
 # Warum Outsourcing?
 
-Durch das Auslagern dieser Prozesse an MSP Consulting profitieren Sie von:
+Durch das Auslagern dieser Prozesse an MSP CONSULTING profitieren Sie von:
 * **Effizienz:** Schnellere Bearbeitung durch erfahrene Spezialisten.
 * **Sicherheit:** Einhaltung aller gesetzlichen Meldepflichten.
 * **Fokus:** Ihr HR-Team kann sich auf die Mitarbeiterentwicklung konzentrieren.
@@ -28,4 +28,4 @@ Wir integrieren uns nahtlos in Ihre bestehenden Prozesse.
 
 > **Achtung:** Bei Angehörigen aus Drittstaaten (Non-EU) sind die Hürden deutlich höher. Hier muss oft nachgewiesen werden, dass kein inländischer Arbeitnehmer gefunden werden konnte.
 
-Wir erstellen die notwendigen **Stellenmarktanalysen** und Begründungsschreiben für das Amt für Wirtschaft und Arbeit (AWA).
+Wir erstellen die notwendigen **Stellenmarktanalysen** und Begründungsschreiben für das Amt für Wirtschaft und Arbeit.

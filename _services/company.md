@@ -8,22 +8,11 @@ weight: 2
 
 Switzerland offers political stability, a strong currency, and a business-friendly environment. We support you in establishing your company here in a legally secure manner.
 
-# Legal Forms
+# Our Approach
 
-Choosing between a GmbH (LLC) and an AG (Ltd) is the first major decision.
+We handle the entire project management for your relocation and business setup, providing expert support from the initial assessment to full operational readiness:
 
-| Feature | GmbH (Limited Liability Company) | AG (Corporation / Ltd) |
-| ------- | -------------------------------- | ---------------------- |
-| **Min. Capital** | CHF 20,000 | CHF 100,000 (min. 50% paid up) |
-| **Anonymity** | Shareholders are public in the commercial register | Shareholders are generally not public |
-| **Liability** | Company assets only | Company assets only |
-
-## Our Approach
-
-We handle the project management for your settlement:
-
-1.  **Domiciliation:** We find suitable office space or offer domicile addresses.
-2.  **Notarial Support:** Organization of the incorporation meeting and notarial certification.
-3.  **Authorities:** Registration for Value Added Tax (VAT) and social security (AHV/IV).
-
-> **Note:** Foreign companies often require a director or manager resident in Switzerland. We advise you on these requirements.
+1.  **Location & Strategy:** We conduct detailed site assessments and advise you on choosing the optimal canton for your specific business goals.
+2.  **Company Formation:** We coordinate the entire incorporation process, including domiciliation (finding office space or providing a registered office address) and organizing all necessary notarizations.
+3.  **Administrative Setup:** We manage registrations for Value Added Tax (VAT) and social security (AHV/IV), ensuring that all regulatory requirements are met from day one.
+4.  **Permits & Staffing:** We secure the required residence and work permits for you, your family members, and your employees.

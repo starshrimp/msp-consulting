@@ -26,6 +26,6 @@ We analyze your situation both legally and pragmatically.
 
 ### Labor Law Compliance
 
-Companies must ensure that they comply with local wage standards when hiring foreign employees. We conduct **preliminary checks** to avoid fines or bans.
+Companies must ensure that they comply with local wage standards when hiring foreign employees. 
 
 > Our goal is to solve problems before they arise.

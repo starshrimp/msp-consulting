@@ -26,6 +26,6 @@ Wir analysieren Ihre Situation juristisch und pragmatisch.
 
 ### Arbeitsrechtliche Compliance
 
-Unternehmen müssen sicherstellen, dass sie bei der Anstellung ausländischer Mitarbeiter die ortsüblichen Löhne einhalten. Wir führen **Vorabklärungen** durch, um Bussen oder Sperren zu vermeiden.
+Unternehmen müssen sicherstellen, dass sie bei der Anstellung ausländischer Mitarbeiter die ortsüblichen Löhne einhalten. 
 
 > Unser Ziel ist es, Probleme zu lösen, bevor sie entstehen.

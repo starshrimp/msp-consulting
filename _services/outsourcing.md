@@ -10,7 +10,7 @@ For HR departments, managing work permits is often a time-consuming task. Mistak
 
 # Why Outsource?
 
-By outsourcing these processes to MSP Consulting, you benefit from:
+By outsourcing these processes to MSP CONSULTING, you benefit from:
 * **Efficiency:** Faster processing by experienced specialists.
 * **Security:** Compliance with all legal reporting obligations.
 * **Focus:** Your HR team can focus on employee development.
@@ -28,4 +28,4 @@ We integrate seamlessly into your existing processes.
 
 > **Attention:** For nationals from third states (Non-EU), the hurdles are significantly higher. It must often be proven that no domestic employee could be found.
 
-We prepare the necessary **labor market analyses** and letters of justification for the Office for Economy and Labor (AWA).
+We prepare the necessary **labor market analyses** and letters of justification for the Office for Economy and Labor.

@@ -17,11 +17,10 @@ Wir bieten eine umfassende Betreuung für EU/EFTA-Bürger sowie für Angehörige
 2. **Bewilligungsverfahren:** Einholen der notwendigen Aufenthaltsbewilligungen (B, C, L).
 3. **Immobilien:** Unterstützung bei der Suche nach Wohneigentum oder Mietobjekten.
 
-> **Wichtig:** Für vermögende Privatpersonen kann die **Pauschalbesteuerung** (Besteuerung nach Aufwand) eine interessante Option sein. Wir verhandeln für Sie mit den kantonalen Steuerbehörden.
 
 ## Bewilligungsarten im Überblick
 
-Die Wahl der richtigen Bewilligung ist entscheidend für Ihren langfristigen Aufenthalt.
+Die Wahl der richtigen Bewilligung ist entscheidend für Ihren Aufenthalt.
 
 | Bewilligung | Bezeichnung | Gültigkeit | Zielgruppe |
 | ----------- | ----------- | ---------- | ---------- |
@@ -33,7 +32,7 @@ Die Wahl der richtigen Bewilligung ist entscheidend für Ihren langfristigen Auf
 
 Der Weg zum Schweizer Wohnsitz erfordert Präzision.
 * **Schritt 1:** Zusammenstellung des Dossiers (Strafregisterauszüge, Finanznachweise).
-* **Schritt 2:** Einreichung beim kantonalen Migrationsamt.
+* **Schritt 2:** Einreichung bei den zuständigen kantonalen & eidgenössischen Ämtern.
 * **Schritt 3:** Anmeldung bei der Wohngemeinde innert 14 Tagen nach Einreise.
 
 Wir stellen sicher, dass alle Fristen eingehalten werden und Ihre Dokumente vollständig sind.
