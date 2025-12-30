@@ -11,6 +11,6 @@ lang: de
 permalink: /
 ---
 
-# MSP Consulting - Ihr Weg in die Schweiz.
+# MSP CONSULTING - Ihr Weg in die Schweiz.
 
-Wir unterstützen Privatpersonen und Unternehmen bei der erfolgreichen Ansiedlung in der Schweiz. Von der Wohnsitznahme über die Firmengründung bis hin zum Outsourcing komplexer Bewilligungsverfahren für Ihre ausländischen Mitarbeiter: Wir navigieren Sie sicher durch alle verwaltungs- und arbeitsmarktlichen Hürden.ß
+MSP CONSULTING MEYER-STEIGMEIER unterstützt Privatpersonen und Unternehmen bei der erfolgreichen Ansiedlung in der Schweiz. Von der Wohnsitznahme über die Firmengründung bis hin zum Outsourcing komplexer Bewilligungsverfahren für Ihre ausländischen Mitarbeiter: Wir navigieren Sie sicher durch alle verwaltungs- und arbeitsmarktlichen Hürden.
